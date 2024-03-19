@@ -1,0 +1,159 @@
+{% load static %}
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalXLLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalXLLabel">Extra-Large Modal</h5>
+                <button type="button" class="close close-btn btn-danger" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box-body">
+                    <div class="row">
+                        <form>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">Name</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="id_employee_name" name="employee_name" type="text" required>
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                  <label class="col-sm-4 control-label">Date of Birth<sup>*</sup></label>
+                                  <div class="col-sm-8">
+                                    <div class="input-group date">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                          <i class="fa fa-calendar"></i>
+                                        </span>
+                                      </div>
+                                      <input type="text" name="dob" class="datepicker form-control" id="id_dob" data-date-format="dd/mm/yyyy">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-4 control-label">Aadhar No</label>
+                                  <div class="col-sm-8">
+                                    <input class="form-control" id="id_aadhar_no" name="aadhar_no" type="text" required>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-4 control-label">Address 2</label>
+                                  <div class="col-sm-8">
+                                    <textarea class="form-control" id="id_address_1" name="address_1" placeholder="Residential Address" type="text" required></textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-4 control-label">Address 1</label>
+                                  <div class="col-sm-8">
+                                    <textarea class="form-control" id="id_address_2" name="address_2" placeholder="Permanent Address" type="text" required></textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-4 control-label">State</label>
+                                  <div class="col-sm-8">
+                                    <select id="id_state" name="state" class="form-control" required>
+                                      <option value="" selected>Select a state</option>
+                                      <option value="KERALA">KERALA</option>
+                                      <option value="TAMIL NADU">TAMIL NADU</option>
+                                      <option value="ODISSA">ODISSA</option>
+                                      <option value="WEST BENGAL">WEST BENGAL</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                          
+                              <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group">
+                                  <label class="col-sm-4 control-label">District</label>
+                                  <div class="col-sm-8">
+                                    <select id="id_district" name="district" class="form-control" required>
+                                      <option value="" selected>Select a district</option>
+                                      <option value="KOZHIKODE">KOZHIKODE</option>
+                                      <option value="MALAPPURAM">MALAPPURAM</option>
+                                      <option value="KANNUR">KANNUR</option>
+                                      <option value="PALAKKAD">PALAKKAD</option>
+                                      <option value="THRISSUR">THRISSUR</option>
+                                      <option value="ERNAMKULAM">ERNAMKULAM</option>
+                                      <option value="KOLLAM">KOLLAM</option>
+                                      <option value="KOTTAYAM">KOTTAYAM</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-4 control-label">Nationality</label>
+                                  <div class="col-sm-8">
+                                    <select id="id_nationality" name="nationality" class="form-control" required>
+                                      <option value="" selected>Select a Nationality</option>
+                                      <option value="INDIA">INDIA</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <!-- Rest of the fields -->
+                              </div>
+                          
+                              <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="form-group">
+                                  <label for="id_phone_no_1" class="col-sm-4 control-label">Phone No.1</label>
+                                  <div class="col-sm-8">
+                                    <input class="form-control" id="id_phone_no_1" name="phone_no_1" type="number" required>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="id_phone_no_2" class="col-sm-4 control-label">Phone No.2</label>
+                                  <div class="col-sm-8">
+                                    <input class="form-control" id="id_phone_no_2" name="phone_no_2" type="number">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="id_contact_person_name" class="col-sm-4 control-label">Contact Person Name</label>
+                                  <div class="col-sm-8">
+                                    <input class="form-control" id="id_contact_person_name" name="contact_person_name" type="text">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="id_contact_person_phone" class="col-sm-4 control-label">Contact Person No</label>
+                                  <div class="col-sm-8">
+                                    <input class="form-control" id="id_contact_person_phone" name="contact_person_phone" type="number">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-4 control-label">Marital Status</label>
+                                  <div class="col-sm-8">
+                                    <select id="id_marital_status" name="marital_status" class="form-control" required>
+                                      <option value="" selected>Select a marital status</option>
+                                      <option value="SINGLE">SINGLE</option>
+                                      <option value="MARRIED">MARRIED</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                          
+                              <div class="col-xs-12 col-sm-12 col-md-4">
+                                <div class="form-group">
+                                  <label for="id_employee_image" class="col-sm-4 control-label">Upload Image</label>
+                                  <div class="col-sm-8">
+                                    <div id="employee_image_preview"></div>
+                                    <input type="file" id="id_employee_image" name="employee_image" accept="image/*" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="id_employee_proof" class="col-sm-4 control-label">Upload Proof</label>
+                                  <div class="col-sm-8">
+                                    <div id="employee_proof_preview"></div>
+                                    <input type="file" id="id_employee_proof" name="employee_proof" accept="image/*" class="form-control">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                          
+                    </div>
+                </div>
+            <!-- Modal content goes here -->
+            </div>
+        </div>
+    </div>
+</div>

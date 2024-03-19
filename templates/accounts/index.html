@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Bootstrap 5.1.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Font Awesome 5.10.0 -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.login-img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.card-overlay{
+    background: rgba(0, 0, 0, 0.4);
+    height: 746px;
+}
+.login-section{
+	padding: 9em 0;
+}
+
+.heading-section{
+	font-size: 28px;
+	color: #0f0d57;
+    font-family: auto;
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+}
+.form-control{
+	background: transparent;
+	border: none;
+	height: 50px;
+	color: rgba(255,255,255,1) !important;
+	border: 1px solid transparent;
+	background: rgba(255,255,255,.08);
+	border-radius: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgba(255,255,255,.8) !important;
+}
+.form-control::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(255,255,255,.8) !important;
+}
+.form-control:-ms-input-placeholder { /* IE 10+ */
+    color: rgba(255,255,255,.8) !important;
+}
+.form-control:-moz-placeholder { /* Firefox 18- */
+    color: rgba(255,255,255,.8) !important;
+}
+.form-control:hover, .form-control:focus{
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border-color: rgba(255,255,255,.4);
+}
+.form-control:focus{
+    border-color: rgba(255,255,255,.4);
+}
+textarea.form-control {
+	height: inherit!important;
+}
+.login-wrap{
+	position: relative;
+	color: rgba(255,255,255,.9);
+}
+.login-wrap h3{
+    font-weight: 300;
+    color: white;
+}
+.login-wrap.social{
+    width: 100%;
+}
+.login-wrap.social a{
+    width: 100%;
+    display: block;
+    border: 1px solid rgba(255,255,255,.4);
+    color: black;
+    background: white;
+}
+.login-wrap.social a:hover{
+    background: black;
+    color: white;
+    border-color: black;
+}
+.form-group{
+	position: relative;
+}
+.field-icon {
+	position: absolute;
+	top: 60%;
+	right: 15px;
+	transform: translateY(-50%);
+	color: rgba(255,255,255,.9);
+}
+.btn {
+	cursor: pointer;
+	border-radius: 40px;
+	box-shadow: none!important;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+.btn:hover, .btn:active, .btn:focus {
+	outline: none;
+}
+.btn.btn-primary {
+    background: #fbceb5 !important;
+    border: 1px solid #fbceb5 !important;
+    color: black !important;
+}
+.btn.btn-primary:hover {
+    border: 1px solid #fbceb5;
+    background: transparent;
+    color :#fbceb5;
+}
+.btn.btn-primary.btn-outline-primary {
+    border: 1px solid #fbceb5;
+    background: transparent;
+    color :#fbceb5;
+}
+.btn.btn-primary.btn-outline-primary:hover {
+    border: 1px solid transparent;
+    background: #fbceb5;
+    color :white;
+}
+.login-checkbox input[type="checkbox"],
+    .login-checkbox .checked {
+    display: none;
+}
+.login-checkbox input[type="checkbox"]:checked ~ .checked
+{
+    display: inline-block;
+}
+.login-checkbox input[type="checkbox"]:checked ~ .unchecked
+{
+    display: none;
+}
+
+</style>    
+</head>
+<body class="login-img js-fullheight" style="background-image: url('{% static "login/bg.jpg" %}')";>
+    <div class="card-overlay js-fullheight">
+        <section class="login-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <h2 class="heading-section">Login</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center pt-5">
+                    <div class="col-md-6 col-lg-4" style="width:30%">
+                        <div class="login-wrap p-0">
+                            <h3 class="mb-4 text-center">Have an account?</h3>
+                            <form action="." method="post" class="signin-form">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="username" placeholder="Username" required>
+                                </div>
+                                <div class="form-group pt-3">
+                                    <input id="password-field" type="password" name="pwd" class="form-control" placeholder="Password" required>
+                                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                </div>
+                                <div class="form-group pt-3">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+                                </div>
+                                <div class="form-group d-md-flex">
+                                    <div class="w-50">
+                                        <label class="login-checkbox" style="color: #fbceb5;">
+                                            <input type="checkbox">
+                                            <i class="fa fa-fw fa fa-square-o unchecked"></i>
+                                            <i class="fa fa-fw fa fa-check-square-o checked"></i>
+                                            Remember Me
+                                        </label>
+                                    </div>
+                                    <div class="w-50 text-md-end">
+                                        <a href="#" style="color: #fff">Forgot Password</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script>
+    
+$(document).ready(function(){
+
+    var fullHeight = function() {
+        $('.js-fullheight').css('height', $(window).height());
+        $(window).resize(function(){
+            $('.js-fullheight').css('height', $(window).height());
+        });
+    };
+    fullHeight();
+
+    $(".toggle-password").click(function() {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+
+});
+</script>    
+</body>
+</html>
